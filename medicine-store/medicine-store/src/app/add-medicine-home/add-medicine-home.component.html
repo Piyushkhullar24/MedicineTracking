@@ -1,0 +1,38 @@
+<form [formGroup]="form">
+    <div>
+        <label>
+            First Name:
+            <input type="text" formControlName="fullName">
+        </label>
+    </div>
+    <div>
+        <label>
+            Brand:
+            <input type="text" formControlName="brand">
+        </label>
+    </div>
+    <div> <label>
+            Price:
+            <input type="number" formControlName="price">
+        </label></div>
+    <div> <label>
+            Quantity:
+            <input type="number" formControlName="quantity">
+        </label></div>
+    <div> <label>
+            ExpiryDate:
+            <input type="date" formControlName="expiryDate">
+        </label></div>
+
+    <button type="submit" (click)="onSubmit()" [disabled]="!form.valid">Submit</button>
+</form>
+
+<div *ngIf="isSaved">
+    Saved Successfully
+</div>
+
+<div *ngIf="error">
+    Some Error Occured
+</div>
+
+<button [routerLink]="['']">Back</button>

@@ -1,0 +1,13 @@
+<div *ngFor="let item of record | keyvalue" style="margin-top: 10px">
+    <div *ngFor="let i of item.value | keyvalue" style="margin-top: 10px">
+<div>
+    {{i.key }} 
+</div>
+<div>
+    {{i.value }}
+</div>
+     
+      </div>
+  </div>
+
+  <button [routerLink]="['']">Back</button>

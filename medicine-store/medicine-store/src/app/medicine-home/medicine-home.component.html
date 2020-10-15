@@ -1,0 +1,19 @@
+<input
+type="text" placeholder="filter" (keyup)="quickSearch()"  
+[(ngModel)]="searchValue"
+#name="ngModel"
+/>
+<button (click)="getSelectedRows()">Get Selected Rows</button>
+<ag-grid-angular
+  #agGrid
+  style="width: 100%; height: 500px"
+  class="ag-theme-alpine"
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  rowSelection="multiple"
+  [overlayNoRowsTemplate] = "overlayNoRowsTemplate"
+  (gridReady)="OnGridReady($event)"
+>
+</ag-grid-angular>
+
+<button [routerLink]="['add-medicine-record']">Add Medicine</button>
